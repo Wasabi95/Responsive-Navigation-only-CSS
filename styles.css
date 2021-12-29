@@ -86,7 +86,7 @@ header {
 .nav-toggle-label span::after {
   display: block;
   background: white;
-  height: 2px;
+  height: 1px;
   width: 2em;
   border-radius: 2px;
   position: relative;
@@ -139,7 +139,7 @@ nav a {
 }
 
 nav a:hover {
-  color: #000;
+  color: rgb(54, 40, 40);
 }
 
 .nav-toggle:checked ~ nav {
@@ -164,8 +164,7 @@ nav a:hover {
   }
   nav {
     all: unset;
-    /* this causes issues with Edge, since it's unsupported */
-    /* the following lines are not from my video, but add Edge support */
+
     position: relative;
     text-align: left;
     transition: none;
@@ -173,7 +172,7 @@ nav a:hover {
     background: none;
     top: initial;
     left: initial;
-    /* end Edge support stuff */
+
     grid-column: 3 / 4;
     display: flex;
     justify-content: flex-end;
@@ -190,19 +189,18 @@ nav a:hover {
     opacity: 1;
     position: relative;
   }
-  nav a::before {
+  nav a::after {
     content: "";
     display: block;
-    height: 5px;
+    height: 2px;
     background: black;
-    position: absolute;
-    top: -0.75em;
+    /* position: absolute; */
     left: 0;
     right: 0;
-    transform: scale(0, 1);
+    transform: scale(0, 2);
     transition: transform ease-in-out 250ms;
   }
-  nav a:hover::before {
+  nav a:hover::after {
     transform: scale(1, 1);
   }
 }
